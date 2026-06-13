@@ -38,7 +38,8 @@ void run_opcode(stack_t **stack, char *opcode,
 		{"nop", nop},
 		{"div", divop},
 		{"mul", mul},
-		{"sub", sub},
+		{"sub", sub}
+		{"mod", mod},,
 		{NULL, NULL}
 	};
 	int i;

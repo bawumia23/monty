@@ -51,7 +51,7 @@ void nop(stack_t **stack, unsigned int line_number);
 void divop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
-
+void mod(stack_t **stack, unsigned int line_number);
 /* global arg for push */
 extern char *g_arg;
 
