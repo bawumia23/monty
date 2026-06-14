@@ -40,6 +40,10 @@ void run_opcode(stack_t **stack, char *opcode,
 		{"mul", mul},
 		{"sub", sub},
 		{"mod", mod},
+		{"pchar", pchar},
+		{"pstr", pstr},
+		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
 	int i;
