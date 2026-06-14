@@ -84,3 +84,26 @@ void rotr(stack_t **stack, unsigned int line_number)
 	(*stack)->prev = tail;
 	*stack = tail;
 }
+/**
+ * stack_mode - sets the mode to LIFO (stack)
+ * @stack: pointer to the top of the stack (unused)
+ * @line_number: current line number (unused)
+ */
+void stack_mode(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+	g_mode = 0;
+}
+
+/**
+ * queue_mode - sets the mode to FIFO (queue)
+ * @stack: pointer to the top of the stack (unused)
+ * @line_number: current line number (unused)
+ */
+void queue_mode(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+	g_mode = 1;
+}

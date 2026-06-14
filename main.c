@@ -1,7 +1,7 @@
 #include "monty.h"
 
 char *g_arg = NULL;
-
+int g_mode = 0;
 /**
  * free_stack - frees all nodes in the stack
  * @stack: pointer to the top of the stack
@@ -44,6 +44,8 @@ void run_opcode(stack_t **stack, char *opcode,
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"stack", stack_mode},
+		{"queue", queue_mode},
 		{NULL, NULL}
 	};
 	int i;

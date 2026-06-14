@@ -58,5 +58,9 @@ void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
 /* global arg for push */
 extern char *g_arg;
+extern int g_mode; /* 0 = stack (LIFO), 1 = queue (FIFO) */
+
+void stack_mode(stack_t **stack, unsigned int line_number);
+void queue_mode(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */

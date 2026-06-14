@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * push - pushes an integer onto the stack
  * @stack: pointer to the top of the stack
@@ -8,6 +7,7 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
+	stack_t *tail;
 	int i, is_num;
 	char *arg = g_arg;
 
@@ -38,12 +38,31 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	new_node->n = atoi(arg);
 	new_node->prev = NULL;
-	new_node->next = *stack;
-	if (*stack)
-		(*stack)->prev = new_node;
-	*stack = new_node;
-}
+	new_node->next = NULL;
 
+	if (g_mode == 0)
+	{
+		new_node->next = *stack;
+		if (*stack)
+			(*stack)->prev = new_node;
+		*stack = new_node;
+	}
+	else
+	{
+		if (!*stack)
+		{
+			*stack = new_node;
+		}
+		else
+		{
+			tail = *stack;
+			while (tail->next)
+				tail = tail->next;
+			tail->next = new_node;
+			new_node->prev = tail;
+		}
+	}
+}
 /**
  * pall - prints all values on the stack from top to bottom
  * @stack: pointer to the top of the stack
